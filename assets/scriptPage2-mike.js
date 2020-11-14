@@ -80,27 +80,7 @@ $(document).ready(function () {
             
 
             
-          //   //////////////////////////////////////////////////////////////////////////
-          //   // Function to filter movies by theater
-          //               ///////////////////////////////////////////////////////////////////////////////////            
-          //   // Unique Movie List Array based on theater
-          //   var moviesInTheater = [];
-          //   for (var i = 0; i < data.length; i++) {
-          //     if (data[i].title !== undefined) {
-          //       moviesInTheater.push(data[i].title);
-          //     };
-          //   };
 
-          //   // Filter Duplicate movie names 
-          //   var uniquemoviesInTheater = moviesInTheater.filter(function (i, index) {
-          //     return moviesInTheater.indexOf(i) === index;
-          //   });
-          //   /////////////////////////
-          //   // Print To Screen
-          //   // var movieChoice = document.getElementById(movieChoice);
-          //   console.log(data);
-          //   console.log(uniquemoviesInTheater);
-          //   showtimeChoice.innerText = uniquemovies;
           });
 
 
