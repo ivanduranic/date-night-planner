@@ -19,19 +19,19 @@ $(document).ready(function () {
     // Api components
 
     // Start Date
-    var startDate = "startDate=2020-11-13";
+    var startDate = "startDate=2020-11-14";
     // Radius and units of measurement mi=miles km=kilometers
     var radius = "&radius=20";
     var units = "&units=mi";
     // Longitude & Lagitude
-    var lat = "&lat=43.592725";
-    var lng = "&lng=-79.542039";
+    var lat = "&lat=40.116630";
+    var lng = "&lng=-75.072852";
 
     /////////////////////////////////////
     // Api 
     var apiUrl = "https:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=fjq6dpfuv8sg5f66p8bmuyn2";
     console.log("http:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=ct3bfnvgcafwzwdvtp4khepg");
-
+    http://data.tmsapi.com/v1.1/movies/showings?startDate=2020-11-14&zip=78701&api_key=bnzzjka7zekrh9tyqd6xxgrf
     // Data Request
     fetch(apiUrl)
       .then(function (response) {
