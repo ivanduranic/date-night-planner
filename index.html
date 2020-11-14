@@ -1,0 +1,107 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Reset CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/reset.css"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--CSS Materialize CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    
+    <title>Date Night</title>
+</head>
+<body>
+    <!--Parallax Container Picture 1 -->
+    <div class="parallax-container">
+        <div class="parallax">
+          <img src="assets/pexels-brett-sayles-2516541.jpg">
+        </div>
+    </div>
+    <!--MAIN CONTENT-->
+    <div class="section z-depth-5">
+        <div class="row container">
+            <!--Some "slogan" here-->
+            <h2 class="header">What's your date-night like?</h2>
+            <p class="grey-text text-darken-3 lighten-3">Let's begin with ...</p>
+            <br>
+            <ul class="collapsible">
+                <!--USER'S LOCATION-->
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Where's your location?</div>
+                    <div class="collapsible-body">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input value="XXX XXX" type="text" class="validate">
+                                <label class="active" >Postal Code</label>
+                            </div>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </li>
+                <!--USER'S DATE-NIGHT CALENDAR DATE/TIME-->
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">event</i>When's your date?</div>
+                    <div class="collapsible-body">  
+                        
+                        <div><i class="material-icons date-icons">event_available</i>Select your date:</div>
+                            <input type="text" class="datepicker">
+                        <br>    
+                        <div><i class="material-icons date-icons">access_time</i>Select your time:</div>
+                            <input type="text" class="timepicker">
+                        
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+
+                    </div>
+                </li>
+                <!--USER'S RANGE OF DISTANCE WILLING TO TRAVEL-->
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">directions_walk</i>How far are you willing to travel?</div>
+                    <div class="collapsible-body">
+                        <p>In kilometers:</p>
+                        <form action="#">
+                            <p class="range-field">
+                            <input type="range" id="test5" min="0" max="100" />
+                            </p>
+                        </form>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+      </div>
+    </div>
+    <!--Parallax Container Picture 2-->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="assets/pexels-mentatdgt-1167192.jpg">
+        </div>
+    </div>
+        
+    
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--JS Materialize CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Scripts to get components of page working from Materialize-->
+    <script>
+        $(document).ready(function(){
+            $('.parallax').parallax();
+            $('.collapsible').collapsible();
+            $('.datepicker').datepicker();
+            $('.timepicker').timepicker();
+        });
+    </script>
+    <!--JS-->
+    <link type="text/javascript" href="assets/script.js"/>
+</body>
+</html>
