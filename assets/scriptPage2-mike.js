@@ -1,17 +1,17 @@
 $(document).ready(function () {
 
   // Components
-  $('.parallax').parallax();
+  $('.collapsible').collapsible();
   $('.scrollspy').scrollSpy();
   $('.carousel').carousel();
-  $('.collapsible').collapsible();
+
+  // Useful Functions
 
 
 
   // Dom Selection
 
-  // var theaterChoice = document.getElementById(theaterChoice);
-  // var movieChoice = document.getElementById(movieChoice);
+  var showTimes = document.getElementById(showTimes);
 
 
   // Test
@@ -29,9 +29,9 @@ $(document).ready(function () {
 
     /////////////////////////////////////
     // Api 
-    var apiUrl = "https:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=7k9ngeqqrjwx2zadh4a6yp8q";
-    console.log(apiUrl);
-    
+    var apiUrl = "https:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=fjq6dpfuv8sg5f66p8bmuyn2";
+    console.log("http:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=ct3bfnvgcafwzwdvtp4khepg");
+    http://data.tmsapi.com/v1.1/movies/showings?startDate=2020-11-14&zip=78701&api_key=bnzzjka7zekrh9tyqd6xxgrf
     // Data Request
     fetch(apiUrl)
       .then(function (response) {
@@ -66,18 +66,27 @@ $(document).ready(function () {
                 movies.push(data[i].title);
               };
             };
+
             // Filter Duplicate movie names 
             var uniquemovies = movies.filter(function (i, index) {
               return movies.indexOf(i) === index;
             });
-
             /////////////////////////
             // Print To Screen
-            
+            // var movieChoice = document.getElementById(movieChoice);
             console.log(data);
             console.log(uniquemovies);
-            $(movieChoice).text(uniquemovies[0]);
+            movieChoice.innerText = uniquemovies;
+            
+
+            
+
           });
+
+
+          
+
+
         } else {
           alert('Error: ' + response.statusText);
         }
@@ -89,4 +98,5 @@ $(document).ready(function () {
 
   getTheaterData();
 });
+
 
