@@ -1,0 +1,33 @@
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.parallax-container {
+    height: 400px;
+}
+
+/* CH tried: section colour (145, 43, 31) */
+.section {
+  background-color: white;
+}
+
+.header{
+  color: black;
+  /* CH tried text-shadow: -5px 5px 5px black; */
+}
+
+/* CH tried changing colour to "Let's begin with"
+.lets-begin {
+  color: white;
+  text-shadow: -1px 1px 1px black; 
+} */
+
+.collapsible-body {
+  background-color: white;
+}
+
+.date-icons {
+  padding-right: 20px;
+  padding-bottom: -20px;
+}
