@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 
   // Dom Selection
-  var movieChoice = document.getElementById(movieChoice);
+
   var showTimes = document.getElementById(showTimes);
 
 
@@ -27,8 +27,9 @@ $(document).ready(function () {
     var lat = "&lat=43.592725";
     var lng = "&lng=-79.542039";
 
+    /////////////////////////////////////
     // Api 
-    var apiUrl = "https:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=7dzhsf6hjxyc3vk9pabnbjmu";
+    var apiUrl = "https:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=fjq6dpfuv8sg5f66p8bmuyn2";
     console.log("http:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=ct3bfnvgcafwzwdvtp4khepg");
 
     // Data Request
@@ -37,8 +38,7 @@ $(document).ready(function () {
         if (response.ok) {
           response.json().then(function (data) {
             console.log(data);
-            console.log(data.length);
-
+            
             // Unique Theater List Array
             var theaters = [];
             for (var i = 0; i < data.length; i++) {
@@ -51,12 +51,37 @@ $(document).ready(function () {
             var uniquetheaters = theaters.filter(function (i, index) {
               return theaters.indexOf(i) === index;
             });
-
+            //////////
+            // Print To Screen
             console.log(uniquetheaters);
-
-            for ( var i = 0; i<uniquetheaters.length; i++){}
             theaterChoice.innerHTML = uniquetheaters;
+
+
+
+            ///////////////////////////////////////////////////////////////////////////////////            
+            // Unique Movie List Array
+            var movies = [];
+            for (var i = 0; i < data.length; i++) {
+              if (data[i].title !== undefined) {
+                movies.push(data[i].title);
+              };
+            };
+
+            // Filter Duplicate movie names 
+            var uniquemovies = movies.filter(function (i, index) {
+              return movies.indexOf(i) === index;
+            });
+            /////////////////////////
+            // Print To Screen
+            // var movieChoice = document.getElementById(movieChoice);
+            console.log(data);
+            console.log(uniquemovies);
+            movieChoice.innerText = uniquemovies;
           });
+
+          //////////////////////////////////////////////////////////////////////////
+          // Function to filter movies by theater
+
 
 
         } else {
