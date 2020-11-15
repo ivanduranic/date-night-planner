@@ -27,10 +27,43 @@ img{
   background-color: white;
 }
 
-.hide {
-    display: none;
+/* .movie-list+ .movie-list-container+ .content {
+    /* display: none; 
+    position: absolute;
+    bottom: 50px;
+    width: fit-content;
+    background-color: rgb(145, 43, 31);
+    padding: 20px;
 }
-.movie-poster:hover + .hide {
+
+/* .movie-poster:hover + .hide {
   display: block;
   color: black;
+} */ 
+
+.card-panel{
+    max-width: 40%;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
