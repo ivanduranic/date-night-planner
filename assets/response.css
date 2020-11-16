@@ -11,6 +11,10 @@ img{
 .section {
    background-color: white;
 }
+
+.theaterEl{
+  margin-bottom: 50px;
+}
   
 .header{
    color: black;
@@ -27,10 +31,26 @@ img{
   background-color: white;
 }
 
-.hide {
-    display: none;
+/* Change colour of Radio Selector Buttons */
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid #ffb74d;
 }
-.movie-poster:hover + .hide {
-  display: block;
-  color: black;
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: #ffb74d;
+}
+
+/* h3, h6 {
+    color: black;
+}
+h5{
+    color: rgb(24, 24, 24);
+} */
+
+.materialboxed{
+    margin: 20px;
 }

@@ -19,7 +19,8 @@ $(document).ready(function () {
     // Api components
 
     // Start Date
-    var startDate = "startDate=2020-11-14";
+    m = moment().format("YYYY-MM-DD");
+    var startDate = "startDate=" + m;
     // Radius and units of measurement mi=miles km=kilometers
     var radius = "&radius=20";
     var units = "&units=mi";
@@ -27,18 +28,19 @@ $(document).ready(function () {
     var lat = "&lat=40.116630";
     var lng = "&lng=-75.072852";
 
+
     /////////////////////////////////////
     // Api 
     var apiUrl = "https:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=7k9ngeqqrjwx2zadh4a6yp8q";
     console.log(apiUrl);
-    
+
     // Data Request
     fetch(apiUrl)
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
             console.log(data);
-            
+
             // Unique Theater List Array
             var theaters = [];
             for (var i = 0; i < data.length; i++) {
@@ -53,6 +55,7 @@ $(document).ready(function () {
             });
             //////////
             // Print To Screen
+            var theaterChoice = document.getElementById("theaterChoice");
             console.log(uniquetheaters);
             theaterChoice.innerHTML = uniquetheaters;
 
@@ -60,6 +63,9 @@ $(document).ready(function () {
 
             ///////////////////////////////////////////////////////////////////////////////////            
             // Unique Movie List Array
+            // 
+            /////////////////////////////////
+
             var movies = [];
             for (var i = 0; i < data.length; i++) {
               if (data[i].title !== undefined) {
@@ -73,10 +79,72 @@ $(document).ready(function () {
 
             /////////////////////////
             // Print To Screen
-            
             console.log(data);
             console.log(uniquemovies);
             $(movieChoice).text(uniquemovies[0]);
+
+
+
+            // //////////////
+            ///Movie based on Theater Choice
+            var theaterChoice;
+            var movieChoice;
+            var theaterList = [];
+            for (var j = 0; j < data.length; j++) {
+              
+              for (var i = 0; i < data[j].showtimes.length; i++) {
+                
+                for (var m = 0; m < data[j].showtimes[i].theatre.length; m++) {
+                  
+                  if (data[j].showtimes[i].theatre[m].name){
+                    console.log(data[j].showtimes[i].theatre[m].name)
+                  };
+                  // // theaterList.push(data[j].showtimes[i].theatre[m].name);
+                  // console.log(x);
+                  // // console.log(showtimes[i].theatre[m].name);
+                  // // if(theaterList == )
+                };
+              };
+            };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // /////////////////////////
+            // // Showtimes
+            // showTimes = [];
+            // for (var j = 0; j < data.length; j++) {
+            //   for (var i = 0; i < data[j].showtimes.length; i++) {
+            //     for (var m = 0; m < data[j].showtimes[i].dateTime.length; m++) {
+            //       showTimes.push(data[j].showtimes[i].dateTime);
+            //       console.log(showTimes);
+            //     };
+            //   };
+            // };
+
+
+
+
+
+
+
+
+
+
           });
         } else {
           alert('Error: ' + response.statusText);
