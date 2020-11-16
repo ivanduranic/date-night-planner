@@ -160,7 +160,8 @@
     <script>
         $(document).ready(function(){
             $('.parallax').parallax();
-            $('.collapsible').collapsible();
+            ;$('.collapsible').collapsible({inDuration: 1000,
+            outDuration: 1000});
             $('select').formSelect();
             $(".dropdown-content.select-dropdown > li span").css("color", "#fb8c00");
             $('.tooltipped').tooltip();

@@ -45,7 +45,8 @@ $(document).ready(function () {
 
                         // Filter Duplicate theater names (data is ordered movie's>higher order>theater)
                         var uniquetheaters = theaters.filter(function (i, index) {
-                            return theaters.indexOf(i) === index;
+                        return theaters.indexOf(i) === index;
+
                         });
                         //////////
 
@@ -61,7 +62,8 @@ $(document).ready(function () {
                             var theaterEl = document.getElementById("theaterEl");
 
                             $("#theaterContainer").append($("#theaterList").clone(true));
-                            $(theaterEl).text(uniquetheaters[i]);
+                            $(theaterEl).text(uniquetheaters[i]).addClass("theaterClick");
+                            $(theaterEl).data('theater', uniquetheaters[i]);
 
 
                         };
@@ -94,6 +96,13 @@ $(document).ready(function () {
     };
     console.log("hello");
     getTheaterData();
+
+
+    $('a.btn').click(function (e) {
+        $('.collapsible').collapsible('close', 0)
+        var theater = e.target.innerHTML;
+        localStorage.setItem("Theater:", theater);
+    });
 });
-console.log("hello");
+
 
