@@ -25,7 +25,7 @@ $(document).ready(function () {
 
         /////////////////////////////////////
         // Api 
-        var apiUrl = "https:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=hs2hujn89q6qvq5bp8d9mnxg";
+        var apiUrl = "https:data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=7k9ngeqqrjwx2zadh4a6yp8q";
         console.log(apiUrl);
 
         // Data Request
@@ -45,14 +45,14 @@ $(document).ready(function () {
 
                         // Filter Duplicate theater names (data is ordered movie's>higher order>theater)
                         var uniquetheaters = theaters.filter(function (i, index) {
-                        return theaters.indexOf(i) === index;
+                            return theaters.indexOf(i) === index;
 
                         });
                         //////////
 
                         /////////////////////////
                         // Print To Screen
-                        // var br = $("<br>")
+
 
 
                         for (var i = 0; i < uniquetheaters.length; i++) {
@@ -69,21 +69,78 @@ $(document).ready(function () {
                         };
 
 
-
-
-                        ///////////////////////////////////////////////////////////////////////////////////            
-                        // Unique Movie List Array
-                        var movies = [];
-                        for (var i = 0; i < data.length; i++) {
-                            if (data[i].title !== undefined) {
-                                movies.push(data[i].title);
-                            };
-                        };
-                        // Filter Duplicate movie names 
-                        var uniquemovies = movies.filter(function (i, index) {
-                            return movies.indexOf(i) === index;
+                        $('a.btn').click(function (e) {
+                            $('.collapsible').collapsible('close', 0)
+                            var theater = e.target.innerHTML;
+                            localStorage.setItem("Theater:", theater);
+                            movieShow();
                         });
-                        console.log(uniquemovies);
+
+
+
+                        // Movie on theater CHoice
+                        function movieShow() {
+
+                            var theaterChoice = localStorage.getItem("Theater:");
+                            var movies = [];
+                            var genres = [];
+                            for (var j = 0; j < data.length; j++) {
+                                for (var i = 0; i < data[j].showtimes.length; i++) {
+
+                                    if (data[j].showtimes[i].theatre.name !== theaterChoice) {
+                                        movies.push(data[j]);
+                                    };
+                                };
+
+                            };
+                            var uniquemovies = movies.filter(function (i, index) {
+                                return movies.indexOf(i) === index;
+                            });
+
+                            var uniquemovies = uniquemovies.filter(function (i, index) {
+                                return i !== "No Films Showing Today";
+                            });
+
+                            console.log(uniquemovies);
+                            var movieContainer = document.getElementById("movieBoard");
+                            var movieEl = document.getElementById("moviePoster");
+
+                            for (var i = 0; i < uniquemovies.length; i++) {
+
+                                var clone = $(movieEl).clone().addClass("hello" + i).appendTo(movieContainer);
+                                $(".hello" + i + "> section.col.s8 > div > div > h3").text(uniquemovies[i].title);
+                                $(".hello" + i + "> section.col.s8 > div > div > h4").text(uniquemovies[i].genres);
+                                $(".hello" + i + "> section.col.s8 > div > div > h6").text(uniquemovies[i].shortDescription);
+                                $(".hello" + i + "> section.col.s8 > div > div > p").text(uniquemovies[i].shortDescription);
+                                $(".hello" + i + "> section.col.s8 > div > div > h5").text(uniquemovies[i].runTime);
+                                
+                            //     movieUrl = uniquemovies[i].replace(/\s/g, '+');
+                            //     var imgApi = "https://api.themoviedb.org/3/search/movie?api_key=ff1a39513c89e4f235c5038be3d731a4&query=" + movieUrl;
+                                
+                            //     fetch(imgApi)
+                            //         .then(function (response) {
+                            //             if (response.ok) {
+                            //                 response.json().then(function (data) {
+
+                            //                     console.log(data);
+
+                                                
+
+
+                            //                 });
+                            //             } else {
+                            //                 alert('Error: ' + response.statusText);
+                            //             }
+                            //         })
+                            //         .catch(function (error) {
+                            //             alert('Unable to connect to Theater API');
+                            //         });
+                            };
+
+                        };
+
+
+
 
                     });
                 } else {
@@ -94,15 +151,13 @@ $(document).ready(function () {
                 alert('Unable to connect to Theater API');
             });
     };
-    console.log("hello");
+
+
+
     getTheaterData();
 
 
-    $('a.btn').click(function (e) {
-        $('.collapsible').collapsible('close', 0)
-        var theater = e.target.innerHTML;
-        localStorage.setItem("Theater:", theater);
-    });
+
 });
 
 
