@@ -1,0 +1,271 @@
+body {
+  background-image: url("../images/pexels-mentatdgt-1167192.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/*----------Hiding scrollbars on multiple browsers-----*/
+
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+body {
+  overflow: -moz-scrollbars-none;
+}
+
+body {
+  -ms-overflow-style: none;
+}
+
+.dark {
+  background-color: lightgray;
+  color: black;
+}
+
+.light {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.odd {
+  background-color: lightgray;
+  color: black;
+}
+
+.even {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.right {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#user-login-interface {
+  display: block;
+  text-align: center;
+}
+
+#signUpBtn,
+#logInBtn,
+#logOutBtn {
+  margin-top: 20px;
+}
+
+#header {
+  margin-top: 100px;
+  margin-bottom: 75px;
+  background-color: rgba(66, 66, 66, 0.7);
+  text-align: center;
+  color: rgb(50, 50, 250);
+  text-shadow: 3px 3px rgb(34, 34, 34);
+}
+
+h1 {
+  font-size: 75px;
+ font-family: 'Cinzel', serif;
+}
+
+#instructions {
+  text-align: center;
+  background-color: rgb(139, 0, 139);
+  color: whitesmoke;
+}
+
+#eachResult {
+  color: whitesmoke;
+  font-size: 15px;
+  height: 200px;
+}
+
+#results {
+  padding: 15px;
+  font-weight: 900;
+  color: whitesmoke;
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+img {
+  width: 205px;
+  height: 115px;
+}
+
+#next {
+  color: whitesmoke;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#form-row {
+  justify-content: center;
+  align-content: center;
+}
+
+#find {
+  display: inline-flex;
+}
+
+.form-group {
+  display: inline-flex;
+}
+
+#city-input,
+#miles-input,
+#search-input,
+#food-input,
+#registerEmail,
+#loginEmail,
+#loginPassword,
+#registerPassword,
+#select-state {
+  height: 50px;
+  margin-right: 10px;
+}
+
+#select-state {
+  margin-left: 10px;
+}
+
+label {
+  background-color: darkblue;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#home-Submit {
+  margin-top: 40px;
+  padding-bottom: 15px;
+  justify-content: center;
+  align-content: center;
+}
+
+#new-params {
+  margin-left: 25px;
+}
+
+#dollar-data {
+  background: rgba(75, 102, 255, 0.6);
+  height: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#footer {
+  background-color: #202020;
+  color: white;
+  align-content: center;
+  justify-content: center;
+  height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  #find {
+    display: inline-grid;
+  }
+  #select-state {
+    height: 50px;
+    margin-right: 10px;
+    background-color: white;
+    margin-bottom: 25px;
+    margin-left: 10px;
+  }
+  body {
+    background-image: url("../images/city.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+  }
+  #dollar-data {
+    background: rgba(75, 102, 255, 0.6);
+    height: 50px;
+    padding-right: 10px;
+    padding-left: 30px;
+  }
+  #new-params {
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+
+  #add-params {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  #find {
+    display: inline-grid;
+  }
+  #select-state {
+    margin-bottom: 25px;
+  }
+}
+
+/* ------------MAP CSS-------*/
+
+#map {
+  width: 90%;
+  height: 400px;
+  padding-bottom: 400px;
+  margin-bottom: 45px;
+}
+
+#headmap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapbox-directions-profile label {
+  background-color: beige;
+}
+
+.text-focus-in {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Date-Night Planner App</title>
+      <!-- Added for mapbox -->
+      <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+      <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.css' type='text/css' />
+    <!--CSS Materialize CDN-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+    <!--Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Google Fonts Link-->    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
+    <!-- Points CSS file. -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/d.png" sizes="32x32" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<div class="container-fluid">
+
+    <body>
+
+      
+      <!-- Modal (needs to be converted to bootstrap) -->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModallLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signUpModalLabel">Enter your email and password to create an account</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <div class="form-group">
+                            <label for="name-input">Email Address</label>
+                            <input class="form-control" id="registerEmail" type="text">
+                            <br/>
+                    </div>
+                    <div class="form-group">
+                            <label for="password-input">Password</label>
+                            <input class="form-control" id="registerPassword" type="password">
+                            <br/>
+                          </div>
+                        
+                        <span id="signUpSuccess"></span>
+                        <span id="errorFrame"></span>
+            </div>
+            <div class="modal-footer">
+                    <button type="submit" id="signUp" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="noBtn">No thanks (continue without creating an account)</button>
+            </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- LOGIN -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Please login below</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <div class="form-group">
+                            <label for="name-input">Email Address</label>
+                            <input class="form-control" id="loginEmail" type="text">
+                            <br/>
+                    </div>
+                    <div class="form-group">
+                            <label for="password-input">Password</label>
+                            <input class="form-control" id="loginPassword" type="password">
+                            <br/>
+                        </div> 
+                        <span id="loginSuccess"></span>
+                        <span id="loginFail"></span>
+                      </div>
+            
+            <div class="modal-footer">
+                    <button type="submit" id="login" class="btn btn-primary">Login</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+          
+          <!-- Modal -->
+          <div class="modal fade" id="logOutModal" tabindex="-1" role="dialog" aria-labelledby="logOutModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="logOutModalLabel"><span id="logOutSuccess"></span></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                
+                <div class="modal-footer">
+                        
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itinModal" id="eventBtn">
+          Your Events
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="itinModal" tabindex="-1" role="dialog" aria-labelledby="itinModallLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="yourEvent">Your Saved Events:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeOne">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                          <span id="yourEventFrame"></span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "closeTwo">Close</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="jumbotron" id="header">
+            <h1 class="display-12 text-focus-in text-wrap">Date Night Planner</h1>
+        </div>
+        <div class="row"></div>
+        <div class="row" id="form-row">
+        <form id="find">
+            <th>
+                <div class="form-group">
+                    <label for="name-input">City:</label>
+                    <input class="form-control" id="city-input" type="text">
+                </div>
+            </th>
+            <th>
+                    <select id="select-state" placeholder="Pick a state...">
+                            <option value="">Select a state...</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                          </select>
+            </th>
+            <th>
+                <div class="form-group">
+                    <label for="rate-input">Miles From:</label>
+                    <input class="form-control" id="miles-input" type="number">
+                </div>
+            </th>
+            <th>
+              <div class="form-group">
+                  <label for="name-input">Category <br/> (optional):</label>
+                  <input class="form-control" id="search-input" type="text">
+              </div>
+          </th>
+        </form>
+        
+    </div>
+    <div class="row">
+        <div class="col text-center">
+          <div id="restart"></div>
+        </div>
+      </div>
+    <div class="row" id="home-Submit">
+      <div class='col-sm-5'></div>
+        <div class="col-sm-2" id="user-login-interface">
+            <button type="button" class="btn btn-primary btn-lg" id="add-params">Submit</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm btn-block" data-toggle="modal" data-target="#signUpModal" id="signUpBtn">Sign up here!</button>
+            <!-- LOGIN -->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm btn-block" data-toggle="modal" data-target="#loginModal" id="logInBtn">Log In</button>
+            <!--LOGOUT BUTTON-->
+            <button type="button" class="btn btn-secondary btn-sm btn-block" data-toggle="modal" data-target="#logOutModal" id=logOutBtn>Log Out</button>
+         </div>
+        <div class='col-sm-5'></div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" id="returned">
+          <div id="instructions"></div>
+          <span id="options"></span>
+          <span id="choices"></span>
+          <div id="results"></div>
+          <div id="next"></div>
+        </div>
+        <div class="col-md-2"></div>
+        </div> 
+        <!-- Map ID -->
+        <div id='headmap'>
+            <div id='map'></div>
+        </div>
+    <div class="row" id="footer">
+      <p id="signature">Made by Group#2 - Nov. 2020</p>
+    </div>
+    </body> 
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+<script src="https://unpkg.com/moment"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+<script src="assets/javascript/app.js" type="text/javascript"></script>
+<script src="assets/javascript/moment.js" type="text/javascript"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script>
+
+</html>
