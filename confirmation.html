@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Reset CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/reset.css"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--CSS Materialize CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--CSS Mapbox-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/response.css">
+    <title>Date Night</title>
+</head>
+<body>
+    <!--Parallax Container Picture 1 -->
+    <div class="parallax-container">
+        <div class="parallax">
+          <img src="assets/pexels-brett-sayles-2516541.jpg">
+        </div>
+    </div>
+    <!--MAIN CONTENT-->
+    <div class="section z-depth-5">
+        <div class="row container">
+            <!--Some "slogan" here-->
+            <h2 class="header">Checkout your confirmation details below!</h2>
+            
+            <ul class="collapsible">
+                <!--USER'S THEATRE SELECTION-->
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">explore</i>Theatre: </div><br>
+                    <div class="collapsible-header"><i class="material-icons">explore</i>Selected Movie: </div><br>
+                    <div class="collapsible-header"><i class="material-icons">explore</i>Selected Showtimes: </div> 
+                    <!-- <div class="collapsible-body"> -->
+                    </div>
+                </li>
+
+                        <!--breaks needed to make sure the selector is enclosed by the collapsible body-->
+                        <br>
+                        <br>
+        </div>
+    </div>
+    <!--Parallax Container Picture 2-->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="assets/pexels-mentatdgt-1167192.jpg">
+        </div>
+    </div>
+        
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--JS Materialize CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--JS Mapbox-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <!--Scripts to get components of page working from Materialize-->
+    <script>
+        $(document).ready(function(){
+            $('.parallax').parallax();
+            ;$('.collapsible').collapsible({inDuration: 1000,
+            outDuration: 1000});
+            $('select').formSelect();
+            $(".dropdown-content.select-dropdown > li span").css("color", "#fb8c00");
+            $('.tooltipped').tooltip();
+            $('.materialboxed').materialbox();
+        });
+    </script>
+    
+    <script src="assets/script.js"></script>
+</body>
+</html>
