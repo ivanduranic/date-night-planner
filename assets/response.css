@@ -20,6 +20,7 @@ img{
   
 .header{
    color: black;
+   text-shadow: -2px 2px 2px grey;
    /* CH tried text-shadow: -5px 5px 5px black; */
 }
   
