@@ -29,9 +29,9 @@ Input Page:
 ![dateNightAppScreenshot](https://i.imgur.com/K5xgqH2.png "A webpage featuring a date night planner application")
 
 Response Page: 
-![dateNightAppScreenshot](https://i.imgur.com/Mr0XWkC.png "A webpage featuring a date night planner application")
-![dateNightAppScreenshot](https://i.imgur.com/g0jpUt2.png "A webpage featuring a date night planner application")
-![dateNightAppScreenshot](https://i.imgur.com/UyjeWt2.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/RBTsiun.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/pB0GNlS.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/iobh4jT.png "A webpage featuring a date night planner application")
 
 ## Credits
 Thank you to the members of group#2 for making this project a joy to work on!
