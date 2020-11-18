@@ -10,10 +10,10 @@
 * [Contributing](#Contributing)
 
 ## About
-This is a date night planner application made using HTML, CSS and Javascript (insert other technologies used here).
+This is a date night planner application made using HTML, CSS, Javascript, JQuery, Materialize, and MapBox.
 This application allows a user to enter a location and how far they are willing to travel. Based on this information, a list of theatres will be generated and displayed to the page. The user will be able to select a theatre, and a list of movies and their showtimes will be displayed. The user may then select a movie and specific show-time to book their tickets.
   You can launch the application by clicking [here.](<link goes here!>) 
-> Website URL: (link goes here!)
+> Website URL: <link here>
   
 ## Instructions
 1. Simply type in your location or allow access to get your geolocation
@@ -23,12 +23,12 @@ This application allows a user to enter a location and how far they are willing 
 5. You may then select a movie and a showtime, and a button will be displayed which redirects you to a page to book/ purchase your movie tickets.
 
 ## Screenshots
-Input Page:
+### Input Page:
 ![dateNightAppScreenshot](https://i.imgur.com/DaLBNxi.png "A webpage featuring a date night planner application")
 ![dateNightAppScreenshot](https://i.imgur.com/5HbrX67.png "A webpage featuring a date night planner application")
 ![dateNightAppScreenshot](https://i.imgur.com/K5xgqH2.png "A webpage featuring a date night planner application")
 
-Response Page: 
+### Response Page: 
 ![dateNightAppScreenshot](https://i.imgur.com/RBTsiun.png "A webpage featuring a date night planner application")
 ![dateNightAppScreenshot](https://i.imgur.com/pB0GNlS.png "A webpage featuring a date night planner application")
 ![dateNightAppScreenshot](https://i.imgur.com/iobh4jT.png "A webpage featuring a date night planner application")
@@ -53,6 +53,8 @@ All photos are from photographers at: https://www.pexels.com/
   > Javascript Contact Form https://www.youtube.com/watch?v=PP4Tr0l08NE
 * MapBox Documentation
   > Geolocation https://docs.mapbox.com/help/tutorials/local-search-geocoding-api/
+* StackOverflow 
+  > Various Questions Related to API fetching https://stackoverflow.com
 
 ## License
 Please credit us if you use our code! Thank you!
