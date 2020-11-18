@@ -32,53 +32,113 @@
             <ul class="collapsible">
                 <!--USER'S LOCATION-->
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">place</i>Where's your location?</div>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i class="material-icons">place</i>Where's your location?</div>
                     <div class="collapsible-body">
                         <div class="row">
-                            <div class="input-field col s6">
+                            <div class="input-field col s8">
                                 <input value="XXX XXX" type="text" class="validate">
                                 <label class="active" >Postal Code</label>
                             </div>
                         </div>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <button class="btn #ff9800 orange" type="submit" name="action">Submit
                             <i class="material-icons right">send</i>
                         </button>
                     </div>
                 </li>
                 <!--USER'S DATE-NIGHT CALENDAR DATE/TIME-->
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">event</i>When's your date?</div>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i class="material-icons">event</i>When's your date?</div>
                     <div class="collapsible-body">  
-                        
-                        <div><i class="material-icons date-icons">event_available</i>Select your date:</div>
-                            <input type="text" class="datepicker">
-                        <br>    
-                        <div><i class="material-icons date-icons">access_time</i>Select your time:</div>
-                            <input type="text" class="timepicker">
-                        
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                            <i class="material-icons right">send</i>
-                        </button>
-
+                        <section class="row">
+                            <section class="col s8">
+                                <div><i class="material-icons date-icons">event_available</i>Select your date:</div>
+                                <input type="text" class="datepicker">
+                            <br>    
+                            <div><i class="material-icons date-icons">access_time</i>Select your time:</div>
+                                <input type="text" class="timepicker">
+                            
+                            <button class="btn #ff9800 orange" type="submit" name="action">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                            </section>
+                        </section>
                     </div>
                 </li>
                 <!--USER'S RANGE OF DISTANCE WILLING TO TRAVEL-->
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">directions_walk</i>How far are you willing to travel?</div>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i class="material-icons">directions_walk</i>How far are you willing to travel?</div>
                     <div class="collapsible-body">
-                        <p>In kilometers:</p>
-                        <form action="#">
-                            <p class="range-field">
-                            <input type="range" id="test5" min="0" max="100" />
-                            </p>
-                        </form>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                            <i class="material-icons right">send</i>
-                        </button>
+                        <section class="row">
+                            <section class="col s8">
+                                <p>In kilometers:</p>
+                                <form action="#">
+                                    <p class="range-field">
+                                        <input type="range" id="test5" min="0" max="100" />
+                                    </p>
+                                </form>
+                                <button class="btn #ff9800 orange" type="submit" name="action">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </section>
+                        </section>
                     </div>
                 </li>
+                 <!--USER'S CUISINE SELECTION-->
+                <!-- <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i class="material-icons">directions_walk</i>What cuisine would you like to have?</div>
+                    <div class="collapsible-body">
+                        <section class="row">
+                            <section class="col s8">
+                                <div class="card">
+                                    <div class="input-field col s12">
+                                        <select>
+                                          <option value="" disabled selected>Choose your cuisine!</option>
+                                          <option value="1">Option 1</option>
+                                          <option value="2">Option 2</option>
+                                          <option value="3">Option 3</option>
+                                        </select>
+                                    <label>Cuisine select:</label>
+                                    <br>
+                                    <p>Budget Options:</p>
+                                    <br>
+                                    <form action="#">
+                                        <p>
+                                          <label>
+                                            <input type="checkbox" class="filled-in"/>
+                                            <span>$</span>
+                                          </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                              <input type="checkbox" class="filled-in"/>
+                                              <span>$$</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                              <input type="checkbox" class="filled-in"/>
+                                              <span>$$$</span>
+                                            </label>
+                                        </p> 
+                                        <p>
+                                            <label>
+                                              <input type="checkbox" class="filled-in"/>
+                                              <span>$$$$</span>
+                                            </label>
+                                        </p>
+                                    </form>
+                                    <br>
+                                    <button class="btn #ff9800 orange" type="submit" name="action">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </section>
+                        </section>
+                        
+                    </div>
+                </li> -->
             </ul>
-      </div>
+        </div>
     </div>
     <!--Parallax Container Picture 2-->
     <div class="parallax-container">
@@ -86,8 +146,6 @@
             <img src="assets/pexels-mentatdgt-1167192.jpg">
         </div>
     </div>
-        
-    
     <!--Jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--JS Materialize CDN-->
@@ -99,6 +157,9 @@
             $('.collapsible').collapsible();
             $('.datepicker').datepicker();
             $('.timepicker').timepicker();
+            $('select').formSelect();
+            $(".dropdown-content.select-dropdown > li span").css("color", "#fb8c00");
+
         });
     </script>
     <!--JS-->
