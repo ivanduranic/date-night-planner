@@ -10,7 +10,7 @@
 * [Contributing](#Contributing)
 
 ## About
-This is a date night planner application made using HTML, CSS, Javascript, JQuery, Materialize, Firebase and MapBox.
+This is a date night planner application made using HTML, CSS, Javascript, JQuery, Materialize, Firebase, MomentJS and MapBox.
 This application allows a user to enter a location and how far they are willing to travel. Based on this information, a list of theatres will be generated and displayed to the page. The user will be able to select a theatre, and a list of movies and their showtimes will be displayed. The user may then select a movie and specific show-time to book their tickets.
   You can launch the application by clicking [here.](https://ivanduranic.github.io/date-night-planner/) 
 > Website URL: https://ivanduranic.github.io/date-night-planner/
@@ -37,7 +37,7 @@ Ever needed help planning a night out? Look no further! With this app you can se
 ![dateNightAppScreenshot](https://i.imgur.com/iobh4jT.png "A webpage featuring a date night planner application")
 
 ## Credits
-> Thank you to the members of group#2 for making this project a joy to work on!
+ Thank you to the members of group#2 for making this project a joy to work on!
 ---
 :school: 
 University of Toronto Continuing Educationg
