@@ -12,8 +12,8 @@
 ## About
 This is a date night planner application made using HTML, CSS, Javascript, JQuery, Materialize, Firebase and MapBox.
 This application allows a user to enter a location and how far they are willing to travel. Based on this information, a list of theatres will be generated and displayed to the page. The user will be able to select a theatre, and a list of movies and their showtimes will be displayed. The user may then select a movie and specific show-time to book their tickets.
-  You can launch the application by clicking [here.](<link goes here!>) 
-> Website URL: <link here>
+  You can launch the application by clicking [here.](https://ivanduranic.github.io/date-night-planner/) 
+> Website URL: https://ivanduranic.github.io/date-night-planner/
 
 ## Pitch
 Ever needed help planning a night out? Look no further! With this app you can search for movies playing at a theatre near your location, or you can specify a postal code. The app will show what movies are playing, at what theater, and the show times based on how far you’re willing to travel. You can purchase your tickets as soon as you've made your choices. Additionally, if you want a bite to eat, you can search for a restaurant as well. Just tell the app what food you’re in the mood for and it will give you a list of restaurants close to the theater. That way you don’t need to drive across town, get stuck in traffic, and be late for the movie!
