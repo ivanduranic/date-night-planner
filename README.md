@@ -29,6 +29,22 @@ This application allows a user to enter a location and how far they are willing 
 ## Credits
 Thank you to the members of group#2 for making this project a joy to work on!
 
+### Pictures
+All photos are from photographers at: https://www.pexels.com/
+* Photographer: mentatdgt
+  * File: pexels-mentatdgt-1167192.jpg
+* Photographer: Brett Sayles
+  * File: pexels-brett-sayles-2516541.jpg
+* Photographer: FWStudio
+  * File: pexels-fwstudio-172292.png
+
+### Tutorials/References Referred to
+* Materialize
+  > Parallaxes https://www.youtube.com/watch?v=yHAxSHEuRRI&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=19
+* Firebase
+  > Javascript Login and Authentication https://www.youtube.com/watch?v=CvkCjfHts9A
+* 
+
 ## License
 Please credit us if you use our code! Thank you!
 
