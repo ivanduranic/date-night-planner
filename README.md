@@ -22,9 +22,16 @@ This application allows a user to enter a location and how far they are willing 
 4. You may select a theatre; once you do, the application will show you a list of movies and their showtimes 
 5. You may then select a movie and a showtime, and a button will be displayed which redirects you to a page to book/ purchase your movie tickets.
 
-## Screenshot
-![dateNightAppScreenshot](https://i.imgur.com/NGjIm1A.jpg "A webpage featuring a date night planner application")
+## Screenshots
+Input Page:
+![dateNightAppScreenshot](https://i.imgur.com/DaLBNxi.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/5HbrX67.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/K5xgqH2.png "A webpage featuring a date night planner application")
 
+Response Page: 
+![dateNightAppScreenshot](https://i.imgur.com/Mr0XWkC.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/g0jpUt2.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/UyjeWt2.png "A webpage featuring a date night planner application")
 
 ## Credits
 Thank you to the members of group#2 for making this project a joy to work on!
