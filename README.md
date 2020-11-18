@@ -38,7 +38,6 @@ Ever needed help planning a night out? Look no further! With this app you can se
 
 ## Credits
 Thank you to the members of group#2 for making this project a joy to work on!
----
 :school: 
 University of Toronto Continuing Educationg
 Full Stack Flex Program - Initial HTML and CSS
