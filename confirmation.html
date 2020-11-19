@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Reset CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/reset.css"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--CSS Materialize CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Mapbox-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+      type="text/css"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/confirmation.css">
+    <title>Date Night</title>
+</head>
+<body>
+    <!--Parallax Container Picture 1 -->
+    <div class="parallax-container">
+        <div class="parallax">
+          <img src="assets/pexels-brett-sayles-2516541.jpg">
+        </div>
+    </div>
+    <!--MAIN CONTENT-->
+    <div class="section z-depth-5">
+        <div class="row container">
+            <!--Some "slogan" here-->
+            <h2 class="header col 12">Here's your date-night intinerary!</h2>
+            <div class="row">
+                <div class="col s12">
+                    <div class="card z-depth-3 #b71c1c red darken-4 white-text">
+                        <div class="card-content white-text">
+                            <h3 id = "movie">Movie:</h3>
+                            <!--Divider to sepparate h3 tag--> 
+                            <div class="divider"></div>
+                            <h5 id = "theater">Theatre:</h5>
+                            <h6 id = "showTime">Show Time:</h6>
+                            <br>
+                            <h5>Map: </h5>
+                            <div id='map'></div>
+                        </div>
+                        <div class="card-action">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#">This is a link</a>
+                                    <a href="#">This is a link</a>  
+                                </div> 
+                            </div>
+                            <div class="row">
+                                <form action="index.html">
+                                    <div class="col">
+                                        <button class="btn #ff9800 orange" type="submit" name="Start a new date night plan">Let's make a new date-night!
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <ul class="collapsible">
+                USER'S THEATRE SELECTION CONFIRMATION
+                <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i class="material-icons">explore</i>Theatre:</div>
+                    <div class="collapsible-body">
+                        
+                    </div>
+
+                </li>
+                <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i class="material-icons">camera_roll</i>Movie:</div>
+                    <div class="collapsible-body">
+                        
+                    </div>
+
+                </li>
+                <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i class="material-icons">access_time</i>Showtime:</div> 
+                    <div class="collapsible-body">
+                        
+                    </div>
+
+                </li>
+
+                breaks needed to make sure the selector is enclosed by the collapsible body
+                <br>
+            </ul> -->
+        </div>
+    </div>
+    <!--Parallax Container Picture 2-->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="assets/pexels-mentatdgt-1167192.jpg">
+        </div>
+    </div>
+        
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--JS Materialize CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--JS Mapbox-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <!--Scripts to get components of page working from Materialize-->
+    <script>
+        $(document).ready(function(){
+            $('.parallax').parallax();
+            ;$('.collapsible').collapsible();
+            $('select').formSelect();
+            $(".dropdown-content.select-dropdown > li span").css("color", "#fb8c00");
+            $('.tooltipped').tooltip();
+            $('.materialboxed').materialbox();
+        });
+    </script>
+    
+    <script src="assets/confirmation.js"></script>
+    <!-- <script src="assets/script.js"></script> -->
+    <script src="Assets\confirmationMap.js"></script>
+</body>
+</html>

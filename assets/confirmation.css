@@ -1,0 +1,58 @@
+/* CSS for confirmation.html (Date-Night Confirmation Page) */
+
+/* Parallax images below/above main content */
+img{
+  max-width: 100%;
+  height: auto;
+}
+    
+.parallax-container {
+   height: 400px;
+}
+  
+/* MAIN CONTENT */
+  
+/* Parrallax container holding all of main content */
+/* CH tried: section colour (145, 43, 31) */
+.section {
+  background-color: white;
+} 
+    
+.header{
+   color: black;
+   text-shadow: -2px 2px 2px grey;
+   /* CH tried text-shadow: -5px 5px 5px black; */
+}
+  
+/* CONTENT Card */
+
+.card{
+    margin-top: 5px;
+}
+  
+/* Text Stuff */
+.text-darken-3{
+    text-shadow: -1px 1px 1px grey;
+}
+  
+h3 {
+    color: white;
+    text-shadow: -2px 2px 2px black;
+}
+h5{
+   color: rgb(26, 16, 16);
+   text-shadow: -2px 2px 2px white;
+}
+h6{
+   color: white;
+  text-shadow: -2px 2px 2px black;
+}
+
+body {
+   margin: 0;
+ }
+
+#map {
+   height: 45vh;
+   width: 45vw;
+ }

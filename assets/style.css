@@ -1,12 +1,17 @@
+/* CSS for index.html (Date-Night Input Page) */
+
+/* Parallax images below/above main content */
+.parallax-container {
+    height: 400px;
+}
 img{
   max-width: 100%;
   height: auto;
 }
 
-.parallax-container {
-    height: 400px;
-}
+/* MAIN CONTENT */
 
+/* Parrallax container holding all of main content */
 /* CH tried: section colour (145, 43, 31) */
 .section {
   background-color: white;
@@ -14,7 +19,7 @@ img{
 
 .header{
   color: black;
-  /* CH tried text-shadow: -5px 5px 5px black; */
+  text-shadow: -2px 2px 2px grey;
 }
 
 /* CH tried changing colour to "Let's begin with"
@@ -23,10 +28,20 @@ img{
   text-shadow: -1px 1px 1px black; 
 } */
 
+.collapsible-header{
+  text-shadow: -1px 1px 1px black;
+  /* border-width: 1px;
+  border-color: #ffb74d;
+  border-style: outset;
+  text-shadow: -2px 2px 2px white; */
+}
+
+
 .collapsible-body {
   background-color: white;
 }
 
+/* Date Selection icons */
 .date-icons {
   padding-right: 20px;
   padding-bottom: -20px;
