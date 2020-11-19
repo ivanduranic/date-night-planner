@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Reset CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/reset.css" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--CSS Materialize CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--CSS Mapbox-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/response.css">
+    <title>Date Night</title>
+</head>
+
+<body>
+    <!--Parallax Container Picture 1 -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="assets/pexels-brett-sayles-2516541.jpg">
+        </div>
+    </div>
+    <!--MAIN CONTENT-->
+    <div class="section z-depth-5">
+        <div class="row container">
+            <!--Some "slogan" here-->
+            <h2 class="header">Alright, let's get you there!</h2>
+
+            <ul class="collapsible">
+                <!--USER'S THEATRE SELECTION-->
+                <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i
+                            class="material-icons">explore</i>Which theatre are we going to?</div>
+                    <div class="collapsible-body">
+                        <form action="#">
+                            <h6 class="black-text text-darken-3 lighten-3">Theatres ...</h6>
+                            <!--Divider to sepparate h6 tag from theatre selections-->
+                            <div class="divider"></div>
+                            <div class="section" id="theaterContainer">
+                                <ul id="theaterList" class="theaterList">
+                                    <label>
+                                        <input class="with-gap " name="group3" type="radio" checked />
+                                        <span><a class="theaterEl btn tooltipped #fb8c00 orange darken-1 white-text"
+                                                data-position="right" data-tooltip="Ammenities: Reserved Seating"
+                                                id="theaterEl">Cineplex Cinemas Winston Churchill</a></span>
+                                    </label>
+                                </ul>
+                                <!-- <br>
+                                <ul>
+                                    <label>
+                                        <input class="with-gap" name="group3" type="radio" checked />
+                                        <span><a class="btn tooltipped #fb8c00 orange darken-1 white-text"
+                                                data-position="right"
+                                                data-tooltip="Ammenities: Closed Captioned">Cineplex Cinemas
+                                                Milton</a></span>
+                                    </label>
+                                </ul> -->
+                                <!-- <br>
+                                <ul>
+                                    <label>
+                                        <input class="with-gap" name="group3" type="radio" checked />
+                                        <span><a class="btn tooltipped #fb8c00 orange darken-1 white-text" data-position="right" data-tooltip="Ammenities: VIP 19+ recliners">Film.Ca Cinemas</a></span>
+                                    </label>
+                                </ul>
+                            </div> -->
+
+                                <!--breaks needed to make sure the selector is enclosed by the collapsible body-->
+                                <br>
+                        </form>
+                    </div>
+                </li>
+               
+                <!--USER'S MOVIE SELECTION-->
+                <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i
+                        class="material-icons">camera_roll</i>What movie are we watching?</div>
+                    <div class="collapsible-body movieBoard" id = "movieBoard"> 
+                        <section class="row moviePoster" id = "moviePoster">
+                            <!--Movie Poster 1-->
+                            <section class="col s4">
+                                <img class="materialboxed z-depth-4 img" width= "240px" height="360px" src="https://mediafiles.cineplex.com/Central/Film/Posters/32078_768_1024.jpg">
+                            </section>
+                            <!--Movie Data Card 1-->
+                            <section class="col s8">
+                                <div class="card z-depth-4 #ffb74d orange lighten-2">
+                                    <div class="card-content">
+                                        <h3>Title: Guardians of the Galaxy</h3>
+                                        <h4>Genres: Science fiction, Adventure, Action, Fantasy, Comedy</h5>
+                                        
+                                        <p>Brash space adventurer Peter Quill (Chris Pratt) finds himself the quarry of relentless bounty hunters after he steals an orb coveted by Ronan, a powerful villain. To evade Ronan, Quill is forced into an uneasy truce with four disparate misfits: gun-toting Rocket Raccoon, treelike-humanoid Groot, enigmatic Gamora, and vengeance-driven Drax the Destroyer. But when he discovers the orb's true power and the cosmic threat it poses, Quill must rally his ragtag group to save the universe.</p>
+                                        <h5>Run Time:PT02H01M</h5>
+                                        <!--Submit Button-->
+                                        <button class="moviebtn btn #00acc1 cyan darken-1" type="submit" name="action">Let's watch this!
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </section>
+                        </section> 
+                        <section class="row">
+                            <!--Movie Poster 2-->
+                            <section class="col s4">
+                                <img class="materialboxed z-depth-4" width= "240px" height="360px" src="https://media.baselineresearch.com/images/860217/860217_large.jpg">
+                            </section>
+                            <!--Movie Data Card 2-->
+                            <section class="col s8">
+                                <div class="card z-depth-4 #ffb74d orange lighten-2"> 
+                                    <div class="card-content">
+                                        <h3>Title: Guardians of the Galaxy</h3>
+                                        <h4>Genres: Science fiction, Adventure, Action, Fantasy, Comedy</h5>
+                                        
+                                        <p>Brash space adventurer Peter Quill (Chris Pratt) finds himself the quarry of relentless bounty hunters after he steals an orb coveted by Ronan, a powerful villain. To evade Ronan, Quill is forced into an uneasy truce with four disparate misfits: gun-toting Rocket Raccoon, treelike-humanoid Groot, enigmatic Gamora, and vengeance-driven Drax the Destroyer. But when he discovers the orb's true power and the cosmic threat it poses, Quill must rally his ragtag group to save the universe.</p>
+                                        <h5>Run Time:PT02H01M</h5>
+                                        <!--Submit Button-->
+                                        <button class=" #00acc1 cyan darken-1" type="submit" name="action">Let's watch this!
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                </li>
+
+                <!--
+                    <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i
+                            class="material-icons">camera_roll</i>What movie are we watching?</div>
+                    <div class="collapsible-body">
+                        <h6 class="black-text text-darken-3 lighten-3">Movies ...</h6>
+                        <!~~Divider to sepparate h6 tag from movie selections~~>
+                        <div class="divider movieBoard" id="movieBoard"> "></div>
+                        <section class="row moviePoster" id="moviePoster"></section>">
+                        <!~~Movie Poster 1~~>
+                        <section class="col s4">
+                            <img class="materialboxed z-depth-4" width="240px" height="360px"
+                                src="https://mediafiles.cineplex.com/Central/Film/Posters/32078_768_1024.jpg">
+                        </section>
+                        <!~~Movie Data Card 1~~>
+                        <section class="col s8 ">
+                            <div class="card z-depth-4 #e0e0e0 grey lighten-1">
+                                <div class="card-content">
+                                    <h3>Title: Guardians of the Galaxy</h3>
+                                    <h4>Genres: Science fiction, Adventure, Action, Fantasy, Comedy</h5>
+
+                                        <p>Brash space adventurer Peter Quill (Chris Pratt) finds himself the quarry of
+                                            relentless bounty hunters after he steals an orb coveted by Ronan, a
+                                            powerful villain. To evade Ronan, Quill is forced into an uneasy truce with
+                                            four disparate misfits: gun-toting Rocket Raccoon, treelike-humanoid Groot,
+                                            enigmatic Gamora, and vengeance-driven Drax the Destroyer. But when he
+                                            discovers the orb's true power and the cosmic threat it poses, Quill must
+                                            rally his ragtag group to save the universe.</p>
+                                        <h5>Run Time:PT02H01M</h5>
+                                        <!~~Submit Button~~>
+                                        <button class="moviebtn btn #fb8c00 orange darken-1" type="submit"
+                                            name="action">Let's watch this!
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                </div>
+                            </div>
+                        </section>
+                        </section>
+                        <section class="row">
+                            <!~~Movie Poster 2~~>
+                            <section class="col s4">
+                                <img class="materialboxed z-depth-4" width="240px" height="360px"
+                                    src="https://media.baselineresearch.com/images/860217/860217_large.jpg">
+                            </section>
+                            <!~~Movie Data Card 2~~>
+                            <section class="col s8 ">
+                                <div class="card z-depth-4 #e0e0e0 grey lighten-1">
+                                    <div class="card-content">
+                                        <h3>Title: Guardians of the Galaxy</h3>
+                                        <h5>Genres: Science fiction, Adventure, Action, Fantasy, Comedy</h5>
+                                        <h6>Description:</h6>
+                                        <h6>Brash space adventurer Peter Quill (Chris Pratt) finds himself the quarry of
+                                            relentless bounty hunters after he steals an orb coveted by Ronan, a
+                                            powerful villain. To evade Ronan, Quill is forced into an uneasy truce with
+                                            four disparate misfits: gun-toting Rocket Raccoon, treelike-humanoid Groot,
+                                            enigmatic Gamora, and vengeance-driven Drax the Destroyer. But when he
+                                            discovers the orb's true power and the cosmic threat it poses, Quill must
+                                            rally his ragtag group to save the universe.</h6>
+                                        <h6>Run Time:PT02H01M</h6>
+                                        <!~~Submit Button~~>
+                                        <button class="btn #fb8c00 orange darken-1" type="submit" name="action">Let's
+                                            watch this!
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                </li> -->
+                <!--USER'S SHOWTIMES SELECTION-->
+                <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i
+                            class="material-icons">access_time</i>What time are we watching it?</div>
+                    <div class="collapsible-body">
+
+                        <select id="myDropdown" class="materialSelect">
+                            <option value="" disabled selected>Choose your show time!</option>
+                        </select>
+                        <!--Submit Button-->
+                        <form action="confirmation.html">
+                        <button class="showTimebtn #fb8c00 orange darken-1" type="submit" name="action" id = "showtimeBtn">Let's
+                            watch this!
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+
+                        <!--breaks needed to make sure the selector is enclosed by the collapsible body-->
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </li>
+                <!--USER'S CUISINE SELECTION-->
+                <!-- <li>
+                    <div class="collapsible-header #b71c1c red darken-4 white-text"><i class="material-icons">access_time</i>What are we eating?</div>
+                    <div class="collapsible-body">
+                    </div>
+                </li> -->
+
+            </ul>
+        </div>
+    </div>
+    
+    <!--Parallax Container Picture 2-->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="assets/pexels-mentatdgt-1167192.jpg">
+        </div>
+    </div>
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--JS Materialize CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--JS Mapbox-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <!--Scripts to get components of page working from Materialize-->
+    <script>
+        $(document).ready(function () {
+            $('.parallax').parallax();
+            $('.collapsible').collapsible({
+                inDuration: 1000,
+                outDuration: 1000
+            });
+            $('select').formSelect();
+            $(".dropdown-content.select-dropdown > li span").css("color", "#fb8c00");
+            $('.tooltipped').tooltip();
+            $('.materialboxed').materialbox();
+        });
+    </script>
+    <!--JS-->
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

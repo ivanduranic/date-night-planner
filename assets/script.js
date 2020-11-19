@@ -88,7 +88,7 @@ $(document).ready(function () {
         
         /////////////////////////////////////
         // Api 
-        var apiUrl = "http://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=sbzzdr7u2t4ydf2utx5nya88";
+        var apiUrl = "http://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=42xyjh2c6tsh9qptj4t2e9pp";
         
         // http://data.tmsapi.com/v1.1/movies/showings?startDate=2020-11-18&zip=78701&api_key=s8yagscpszc2nfm6urns694k
 
