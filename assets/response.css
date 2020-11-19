@@ -54,3 +54,23 @@ h5{
 .materialboxed{
     margin: 20px;
 }
+
+/* Temporary drop down
+ */
+ /* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* .hide{
+  display : none;
+}
+
+.show{
+  display : block;
+} */

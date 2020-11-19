@@ -1,5 +1,23 @@
 $(document).ready(function () {
     localStorage.clear();
+    var datepicker = $('.datepicker');
+    var calenderBtn = $("#calendereBtn");
+
+    var userLocation = $("#userLocation").on('click', getUserLocation());
+    
+
+    function getUserLocation() {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            if (position.coords) {
+                localStorage.setItem("Geo Accuracy", position.coords.accuracy);
+                localStorage.setItem("User Latitute", position.coords.latitude);
+                localStorage.setItem("User Longitute", position.coords.longitude);
+            } else {
+                getUserLocation();
+            }
+        });
+    }
+
     // Grabbing User Location Input 
     var calenderBtn = $("#locationBtn").on('click', function () {
         var desiredLocation = ($("#locationPicker").val());
