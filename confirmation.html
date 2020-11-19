@@ -9,8 +9,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--CSS Materialize CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--CSS Mapbox-->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
+    <!--Mapbox-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+      type="text/css"
+    />
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="assets/confirmation.css">
     <title>Date Night</title>
@@ -37,7 +44,8 @@
                             <h5 id = "theater">Theatre:</h5>
                             <h6 id = "showTime">Show Time:</h6>
                             <br>
-                            <h5>Map:</h5>
+                            <h5>Map: </h5>
+                            <div id='map'></div>
                         </div>
                         <div class="card-action">
                             <div class="row">
@@ -116,5 +124,6 @@
     
     <script src="assets/confirmation.js"></script>
     <!-- <script src="assets/script.js"></script> -->
+    <script src="Assets\confirmationMap.js"></script>
 </body>
 </html>

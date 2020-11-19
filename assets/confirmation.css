@@ -47,3 +47,12 @@ h6{
    color: white;
   text-shadow: -2px 2px 2px black;
 }
+
+body {
+   margin: 0;
+ }
+
+#map {
+   height: 45vh;
+   width: 45vw;
+ }
