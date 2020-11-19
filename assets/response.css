@@ -1,3 +1,6 @@
+/* CSS for response.html (Date-Night Response Page) */
+
+/* Parallax images below/above main content */
 img{
   max-width: 100%;
   height: auto;
@@ -6,18 +9,21 @@ img{
 .parallax-container {
    height: 400px;
 }
-  
-/* CH tried: section colour (145, 43, 31) */
-.section {
-   background-color: white;
-}
 
 .theaterEl{
   margin-bottom: 50px;
 }
+/* MAIN CONTENT */
+
+/* Parrallax container holding all of main content */
+/* CH tried: section colour (145, 43, 31) */
+.section {
+   background-color: white;
+}
   
 .header{
    color: black;
+   text-shadow: -2px 2px 2px grey;
    /* CH tried text-shadow: -5px 5px 5px black; */
 }
   
@@ -31,9 +37,15 @@ img{
   background-color: white;
 }
 
+.collapsible-header{
+    text-shadow: -1px 1px 1px black;
+}
+
+/* THEATRE SELECTION */
+
 /* Change colour of Radio Selector Buttons */
 
-[type="radio"]:checked + span:after,
+/* [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:before,
 [type="radio"].with-gap:checked + span:after {
   border: 2px solid #ffb74d;
@@ -42,35 +54,39 @@ img{
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:after {
   background-color: #ffb74d;
-}
-
-/* h3, h6 {
-    color: black;
-}
-h5{
-    color: rgb(24, 24, 24);
 } */
 
+/* Class allows theatre selection buttons to have pop-ups */
+.tooltipped {
+    /* text-shadow: -1px 1px 1px grey; */
+}
+
+/* MOVIE SELECTION */
+
+/* Movie Poster Container */
 .materialboxed{
     margin: 20px;
 }
 
-/* Temporary drop down
- */
- /* Dropdown Button */
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+/* Movie Card */
+.card {
+    background-image: url(pexels-fwstudio-172292.png);
 }
 
-/* .hide{
-  display : none;
+/* Text Stuff */
+.text-darken-3{
+    text-shadow: -1px 1px 1px grey;
 }
 
-.show{
-  display : block;
-} */
+h3 {
+    color: white;
+    text-shadow: -2px 2px 2px black;
+}
+h5{
+    color: rgb(26, 16, 16);
+    text-shadow: -2px 2px 2px white;
+}
+h6{
+    color: white;
+    text-shadow: -2px 2px 2px black;
+}

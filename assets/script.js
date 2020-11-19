@@ -1,26 +1,95 @@
 $(document).ready(function () {
 
+    // Index Page
+    // ////////////////////////////////////////////////////////////////////////
+    // Clear Local Storage
+    
 
-    // Test
+    // Declare Variables To Store Input Variable
+
+    var datepicker = $('#datePicker').val();
+    var calenderBtn = $("#calendereBtn")
+    var userLocationSelect = $("#userLocation").val();
+    var rangePicker = $("#rangepicker").val();
+
+    // User Location GPS
+    //////////////////////
+    var userLocation = $("#userLocation").on('click', getUserLocation());
+
+    function getUserLocation() {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            if (position.coords) {
+                localStorage.setItem("Geo Accuracy", position.coords.accuracy);
+                localStorage.setItem("User Latitute", position.coords.latitude);
+                localStorage.setItem("User Longitute", position.coords.longitude);
+            } else {
+                getUserLocation();
+            }
+        });
+    };
+
+    // Grabbing User Location Input 
+    //////////////////////////////
+    var locationBtn = $("#locationBtn").on('click', function () {
+        var desiredLocation = ($("#userLocation").val());
+
+        // Saving in local storage
+        localStorage.setItem("Desired Location:", desiredLocation);
+
+    });
+
+    // Grabbing User Calender Input 
+    ///////////////////////////////
+    var calenderBtn = $("#dateBtn").on('click', function () {
+        var desiredDate = ($("#datePicker").val());
+        var desiredTime = ($("#timePicker").val());
+
+        // Saving in local storage
+        localStorage.setItem("Desired Date:", desiredDate);
+        localStorage.setItem("Desired Time:", desiredTime);
+    });
+
+
+    // Grabbing User Range Input 
+    /////////////////////////////
+    var rangeBtn = $("#rangeBtn").on('click', function () {
+        var desiredRange = ($("#rangePicker").val());
+
+        // Saving in local storage
+        localStorage.setItem("Desired Range:", desiredRange);
+    });
+
+
+
+
+    // Page 2
+    /////////////////////////
+    // Main Function
+    ///////////////////////
     var getTheaterData = function () {
         // Api components
-        localStorage.clear();
+        
+        desiredRange = localStorage.getItem("Desired Range:");
+        desiredDate = localStorage.getItem("Desired Date:"), 
+        desiredLocation = localStorage.getItem("Desired Location:")
 
         // Start Date
         // m = moment().format('YYYY-MM-DD')
         // console.log(m);
-        var startDate = "startDate=2020-11-19";
+
+        var startDate = "startDate=2020-11-20";
         // Radius and units of measurement mi=miles km=kilometers
-        var radius = "&radius=20";
+        var radius = "&radius=" + desiredRange;
         var units = "&units=mi";
         // Longitude & Lagitude
         var lat = "&lat=40.116630";
         var lng = "&lng=-75.072852";
-        var zip= "&zip=78701"
-
+        var zip = "&zip="+desiredLocation;
+        
         /////////////////////////////////////
         // Api 
-        var apiUrl = "http://data.tmsapi.com/v1.1/movies/showings?" + startDate + lat + lng + radius + units + "&api_key=s8yagscpszc2nfm6urns694k";
+        var apiUrl = "http://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=sbzzdr7u2t4ydf2utx5nya88";
+        
         // http://data.tmsapi.com/v1.1/movies/showings?startDate=2020-11-18&zip=78701&api_key=s8yagscpszc2nfm6urns694k
 
         console.log(apiUrl);
@@ -186,21 +255,23 @@ $(document).ready(function () {
                                 $("#myDropdown").trigger('contentChanged');
 
 
-                              
 
-                                $("#myDropdown").change(function(e) {
-                                    var chosenShowTime =($('select#myDropdown').val());
+
+                                $("#myDropdown").change(function (e) {
+                                    var chosenShowTime = ($('select#myDropdown').val());
                                     localStorage.setItem("Showtime:", chosenShowTime);
-                                    });
+                                });
 
-                                // $('.option').click(function (e) {
 
-                                //     $('.collapsible').collapsible('close', 2);
-                                //     var chosenShowTime = $(e.target).text();
-                                //     localStorage.setItem("Showtime:", chosenShowTime);
-                                //     // showTimes(chosenMovie, uniquemovies, theaterChoice);
-                                // });
 
+                                var movie = localStorage.getItem("Movie:");
+                                var theater = localStorage.getItem("Theater:");
+                                var showtimes = localStorage.getItem("Showtime:");
+                            
+                                $("#movie").text("Movie:" + movie);
+                                $("#theater").text("Theater:" + theater);
+                                $("#movie").text("Movie:" + showtimes);
+                            
 
                             };
                         };
@@ -222,3 +293,10 @@ $(document).ready(function () {
 
 
 });
+
+
+
+
+
+
+
