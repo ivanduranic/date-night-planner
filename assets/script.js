@@ -97,7 +97,7 @@ $(document).ready(function () {
 
         /////////////////////////////////////
         // Api 
-        var apiUrl = "https://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=7qf7ce3qc4hgvn2gxhaa8pn6";
+        var apiUrl = "https://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=hs2hujn89q6qvq5bp8d9mnxg";
 
 
         // Data Request
@@ -168,7 +168,7 @@ $(document).ready(function () {
                             var uniquemovies = movies.filter(function (i, index) {
                                 return movies.indexOf(i) === index;
                             });
-                            
+
                             var movieContainer = document.getElementById("movieBoard");
                             var movieEl = document.getElementById("moviePoster");
 
