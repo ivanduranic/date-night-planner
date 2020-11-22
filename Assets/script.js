@@ -86,7 +86,7 @@ $(document).ready(function () {
         // m = moment().format('YYYY-MM-DD')
         // console.log(m);
 
-        var startDate = "startDate=2020-11-20";
+        var startDate = "startDate=2020-11-26";
         // Radius and units of measurement mi=miles km=kilometers
         var radius = "&radius=" + desiredRange;
         var units = "&units=mi";
@@ -107,7 +107,10 @@ $(document).ready(function () {
                     response.json().then(function (data) {
                         console.log(data);
 
+
+                        //////////////////////
                         // Unique Theater List Array
+                        ////////////////////////////////////////
                         var theaters = [];
                         for (var i = 0; i < data.length; i++) {
                             if (data[i].showtimes[i] !== undefined) {
@@ -115,15 +118,15 @@ $(document).ready(function () {
                             };
                         };
 
-                        // Filter Duplicate theater names (data is ordered movie's>higher order>theater)
+                        // Filter Duplicate theater names 
+                        /////////////////////////////////
                         var uniquetheaters = theaters.filter(function (i, index) {
                             return theaters.indexOf(i) === index;
-
                         });
-                        //////////
 
                         /////////////////////////
                         // Print To Screen
+                        //////////////////
                         for (var i = 0; i < uniquetheaters.length; i++) {
                             console.log(uniquetheaters[i]);
                             // var theaterList = document.getElementById("theaterList");
@@ -142,7 +145,9 @@ $(document).ready(function () {
                             movieShow();
                         });
 
-                        // Movie on theater CHoice
+                        //////////////////////////////
+                        // Movie Selection Based on Theater Choice
+                        /////////////////////////////
                         function movieShow() {
 
                             var theaterChoice = localStorage.getItem("Theater:");
@@ -157,14 +162,12 @@ $(document).ready(function () {
                                 };
 
                             };
+                            ///////////////////
+                            //Filter
+                            ///////////////////
                             var uniquemovies = movies.filter(function (i, index) {
                                 return movies.indexOf(i) === index;
                             });
-
-                            uniquemovies = uniquemovies.filter(e => e !== 'No Films Showing Today');
-
-
-                            console.log(uniquemovies);
                             var movieContainer = document.getElementById("movieBoard");
                             var movieEl = document.getElementById("moviePoster");
 
