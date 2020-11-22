@@ -10,10 +10,9 @@
 * [Contributing](#Contributing)
 
 ## About
-This is a date night planner application made using HTML, CSS and Javascript (insert other technologies used here).
-This application allows a user to enter a location and how far they are willing to travel. Based on this information, a list of theatres will be generated and displayed to the page. The user will be able to select a theatre, and a list of movies and their showtimes will be displayed. The user may then select a movie and specific show-time to book their tickets.
-  You can launch the application by clicking [here.](<link goes here!>) 
-> Website URL: (link goes here!)
+This is a Date-night planner application made using HTML, CSS, JavaScript, Mapbox/Google Maps API, Yelp API, GraceNote Developer, Firebase.
+This application allows a user to enter a location and how far they are willing to travel. Based on this information, a list of theatres will be generated and displayed to the page. The user will be able to select a theatre, and a list of movies and their showtimes will be displayed. The user may then select a movie and specific show-time to book their tickets. 
+> Website URL: https://ivanduranic.github.io/date-night-planner/
   
 ## Instructions
 1. Simply type in your location or allow access to get your geolocation
