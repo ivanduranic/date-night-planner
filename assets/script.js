@@ -11,6 +11,8 @@ $(document).ready(function () {
     var calenderBtn = $("#calendereBtn")
     var userLocationSelect = $("#userLocation").val();
     var rangePicker = $("#rangepicker").val();
+    // var m = moment()format();
+    // console.log(m);
 
     // User Location GPS
     //////////////////////
@@ -45,7 +47,10 @@ $(document).ready(function () {
     // Grabbing User Calender Input 
     ///////////////////////////////
     var calenderBtn = $("#dateBtn").on('click', function () {
-        var desiredDate = ($("#datePicker").val());
+        var desiredDate1 = ($("#datePicker").val());
+        var desiredDate = moment(desiredDate1).format('YYYY-MM-DD');
+        console.log(desiredDate);
+        console.log(desiredDate1);
         var desiredTime = ($("#timePicker").val());
 
         // Saving in local storage
@@ -78,15 +83,15 @@ $(document).ready(function () {
     var getTheaterData = function () {
         // Api components
 
-        desiredRange = localStorage.getItem("Desired Range:");
-        desiredDate = localStorage.getItem("Desired Date:"),
-            desiredLocation = localStorage.getItem("Desired Location:")
+        var desiredRange = localStorage.getItem("Desired Range:");
+        var desiredDate = localStorage.getItem("Desired Date:");
+        var desiredLocation = localStorage.getItem("Desired Location:");
 
         // Start Date
         // m = moment().format('YYYY-MM-DD')
         // console.log(m);
 
-        var startDate = "startDate=2020-11-26";
+        var startDate = "startDate="+desiredDate;
         // Radius and units of measurement mi=miles km=kilometers
         var radius = "&radius=" + desiredRange;
         var units = "&units=mi";
@@ -98,7 +103,7 @@ $(document).ready(function () {
         /////////////////////////////////////
         // Api 
         var apiUrl = "https://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=hs2hujn89q6qvq5bp8d9mnxg";
-
+        console.log(apiUrl);
 
         // Data Request
         fetch(apiUrl)
@@ -169,13 +174,17 @@ $(document).ready(function () {
                                 return movies.indexOf(i) === index;
                             });
 
+
                             var movieContainer = document.getElementById("movieBoard");
                             var movieEl = document.getElementById("moviePoster");
 
-                            for (var i = 1; i < (uniquemovies.length); i++) {
+                            var elements = document.getElementsByClassName("clone");
+                            while (elements.length > 0) elements[0].remove();
+
+                            for (var i = 1; i < uniquemovies.length; i++) {
                                 // var runTime = uniquemovies[i].runTime;
 
-                                var clone = $(movieEl).clone().addClass("hello" + i).appendTo(movieContainer);
+                                var clone = $(movieEl).clone().addClass("clone hello" + i).appendTo(movieContainer);
                                 $(".hello" + i + "> section.col.s8 > div > div > h3").text(uniquemovies[i].title)
                                 $(".hello" + i + "> section.col.s8 > div > div > h3").addClass("title");
                                 $(".hello" + i + "> section.col.s8 > div > div > h4").text(uniquemovies[i].genres);
@@ -192,29 +201,32 @@ $(document).ready(function () {
 
 
                                 console.log(uniquemovies[i]);
-                                var movieUrl = uniquemovies[i].title.split(" ").join("+");
-                                var imgApi = "https://api.themoviedb.org/3/search/movie?api_key=ff1a39513c89e4f235c5038be3d731a4&query=" + movieUrl;
-                                // var posterlink = [];
 
-                                fetch(imgApi)
-                                    .then(function (response) {
-                                        if (response.ok) {
-                                            response.json().then(function (posterData) {
+                                // Poster Image Api 
 
-                                                var posterpath = posterData.results[0].poster_path;
+                                // var movieUrl = uniquemovies[i].title.split(" ").join("+");
+                                // var imgApi = "https://api.themoviedb.org/3/search/movie?api_key=ff1a39513c89e4f235c5038be3d731a4&query=" + movieUrl;
+                                // // var posterlink = [];
 
-                                                var posterlink = ("https://image.tmdb.org/t/p/w342" + posterpath);
+                                // fetch(imgApi)
+                                //     .then(function (response) {
+                                //         if (response.ok) {
+                                //             response.json().then(function (posterData) {
 
-                                                return posterlink;
+                                //                 var posterpath = posterData.results[0].poster_path;
 
-                                            });
-                                        } else {
-                                            // alert('Error: ' + response.statusText);
-                                        }
-                                    })
-                                    .catch(function (error) {
-                                        alert('Unable to connect to Theater API');
-                                    });
+                                //                 var posterlink = ("https://image.tmdb.org/t/p/w342" + posterpath);
+
+                                //                 return posterlink;
+
+                                //             });
+                                //         } else {
+                                //             // alert('Error: ' + response.statusText);
+                                //         }
+                                //     })
+                                //     .catch(function (error) {
+                                //         alert('Unable to connect to Theater API');
+                                //     });
                                 posterlink = localStorage.getItem("Poster:");
                                 $(".hello" + i + "> section.col.s4 > div.material-placeholder > img.materialboxed.z-depth-4.img").attr("src", posterlink);
                                 if (uniquemovies[i].title == "Tenet") {
@@ -250,7 +262,8 @@ $(document).ready(function () {
                             // 
                             $('.moviebtn').click(function (e) {
 
-                                $('.collapsible').collapsible('close', 1);
+                                if (uniquemovies)
+                                    $('.collapsible').collapsible('close', 1);
                                 var chosenMovie = $(e.target).siblings("h3").text();
                                 localStorage.setItem("Movie:", chosenMovie);
                                 showTimes(chosenMovie, uniquemovies, theaterChoice);
@@ -264,13 +277,19 @@ $(document).ready(function () {
                                 for (var i = 0; i < uniquemovies.length; i++) {
                                     if (chosenMovie === uniquemovies[i].title) {
 
-                                        for (var j = 0; j < uniquemovies[i].showtimes.length; j++) {
+                                        if (uniquemovies[i].showtimes.length) {
+                                            for (var j = 0; j < uniquemovies[i].showtimes.length; j++) {
 
-                                            var theaterList = uniquemovies[i].showtimes[j];
-                                            if (theaterList.theatre.name === theaterChoice) {
-                                                dateTimes.push(uniquemovies[i].showtimes[j].dateTime);
+                                                var theaterList = uniquemovies[i].showtimes[j];
+                                                if (theaterList.theatre.name === theaterChoice) {
+                                                    dateTimes.push(uniquemovies[i].showtimes[j].dateTime);
+                                                };
                                             };
+                                        }
+                                        else {
+                                            alert("No showtimes for this showing on this date")
                                         };
+
                                     }
                                 };
                                 console.log(dateTimes);
