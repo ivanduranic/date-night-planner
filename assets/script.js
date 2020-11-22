@@ -86,7 +86,7 @@ $(document).ready(function () {
         // m = moment().format('YYYY-MM-DD')
         // console.log(m);
 
-        var startDate = "startDate=2020-11-20";
+        var startDate = "startDate=2020-11-28";
         // Radius and units of measurement mi=miles km=kilometers
         var radius = "&radius=" + desiredRange;
         var units = "&units=mi";
