@@ -74,10 +74,10 @@ $(document).ready(function () {
         desiredLocation = localStorage.getItem("Desired Location:")
 
         // Start Date
-        // m = moment().format('YYYY-MM-DD')
-        // console.log(m);
+        m = moment().format('YYYY-MM-DD')
+        console.log(m);
 
-        var startDate = "startDate=2020-11-20";
+        var startDate = "startDate=2020-11-30";
         // Radius and units of measurement mi=miles km=kilometers
         var radius = "&radius=" + desiredRange;
         var units = "&units=mi";
@@ -89,7 +89,7 @@ $(document).ready(function () {
         /////////////////////////////////////
         // Api 
         var apiUrl = "http://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=42xyjh2c6tsh9qptj4t2e9pp";
-        
+        console.log(apiUrl);
         // http://data.tmsapi.com/v1.1/movies/showings?startDate=2020-11-18&zip=78701&api_key=s8yagscpszc2nfm6urns694k
 
         console.log(apiUrl);
