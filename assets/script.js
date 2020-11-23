@@ -2,7 +2,6 @@ $(document).ready(function () {
     // Index Page
     // ////////////////////////////////////////////////////////////////////////
     // Clear Local Storage
-localStorage.clear();
 
     // Declare Variables To Store Input Variable
 
