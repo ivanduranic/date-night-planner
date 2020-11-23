@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Index Page
     // ////////////////////////////////////////////////////////////////////////
-    // Clear Local Storage
+    
 
     // Declare Variables To Store Input Variable
 
@@ -63,15 +63,15 @@ $(document).ready(function () {
     /////////////////////////////
     var rangeBtn = $("#rangeBtn").on('click', function () {
         var desiredRange = ($("#rangePicker").val());
-
+    
         // Saving in local storage
         localStorage.setItem("Desired Range:", desiredRange);
         // Close after select
         $('.collapsible').collapsible('close', 2)
-        getTheaterData();
+        
     });
-
-
+        
+        
 
 
     // Page 2
@@ -346,7 +346,7 @@ $(document).ready(function () {
             });
     };
 
-
+    getTheaterData();
 
     
 
