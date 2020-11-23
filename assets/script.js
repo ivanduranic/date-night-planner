@@ -100,7 +100,7 @@ $(document).ready(function () {
 
         /////////////////////////////////////
         // Api 
-        var apiUrl = "https://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=hs2hujn89q6qvq5bp8d9mnxg";
+        var apiUrl = "https://data.tmsapi.com/v1.1/movies/showings?" + startDate + zip + radius + units + "&api_key=sbzzdr7u2t4ydf2utx5nya88";
         console.log(apiUrl);
 
         // Data Request
