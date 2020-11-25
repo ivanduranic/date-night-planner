@@ -15,6 +15,10 @@ This application allows a user to enter a location and how far they are willing 
   You can launch the application by clicking [here.](https://ivanduranic.github.io/date-night-planner/) 
 > Website URL: https://ivanduranic.github.io/date-night-planner/
 
+You will be prompted to log in when you access the page; to make it easy for you, you may log in using our test email.
+> Email: test22@gmail.com
+> Password: test22
+
 ## Pitch
 Ever needed help planning a night out? Look no further! With this app you can search for movies playing at a theatre near your location, or you can specify a postal code. The app will show what movies are playing, at what theater, and the show times based on how far you’re willing to travel. You can purchase your tickets as soon as you've made your choices. Additionally, if you want a bite to eat, you can search for a restaurant as well. Just tell the app what food you’re in the mood for and it will give you a list of restaurants close to the theater. That way you don’t need to drive across town, get stuck in traffic, and be late for the movie!
   
