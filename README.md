@@ -10,9 +10,13 @@
 * [Contributing](#Contributing)
 
 ## About
-This is a Date-night planner application made using HTML, CSS, JavaScript, Mapbox/Google Maps API, Yelp API, GraceNote Developer, Firebase.
-This application allows a user to enter a location and how far they are willing to travel. Based on this information, a list of theatres will be generated and displayed to the page. The user will be able to select a theatre, and a list of movies and their showtimes will be displayed. The user may then select a movie and specific show-time to book their tickets. 
+This is a date night planner application made using HTML, CSS, Javascript, JQuery, Materialize, Firebase, MomentJS and MapBox.
+This application allows a user to enter a location and how far they are willing to travel. Based on this information, a list of theatres will be generated and displayed to the page. The user will be able to select a theatre, and a list of movies and their showtimes will be displayed. The user may then select a movie and specific show-time to book their tickets.
+  You can launch the application by clicking [here.](https://ivanduranic.github.io/date-night-planner/) 
 > Website URL: https://ivanduranic.github.io/date-night-planner/
+
+## Pitch
+Ever needed help planning a night out? Look no further! With this app you can search for movies playing at a theatre near your location, or you can specify a postal code. The app will show what movies are playing, at what theater, and the show times based on how far you’re willing to travel. You can purchase your tickets as soon as you've made your choices. Additionally, if you want a bite to eat, you can search for a restaurant as well. Just tell the app what food you’re in the mood for and it will give you a list of restaurants close to the theater. That way you don’t need to drive across town, get stuck in traffic, and be late for the movie!
   
 ## Instructions
 1. Simply type in your location or allow access to get your geolocation
@@ -21,12 +25,32 @@ This application allows a user to enter a location and how far they are willing 
 4. You may select a theatre; once you do, the application will show you a list of movies and their showtimes 
 5. You may then select a movie and a showtime, and a button will be displayed which redirects you to a page to book/ purchase your movie tickets.
 
-## Screenshot
-![dateNightAppScreenshot](https://i.imgur.com/NGjIm1A.jpg "A webpage featuring a date night planner application")
+## Screenshots
+### Input Page:
+![dateNightAppScreenshot](https://i.imgur.com/DaLBNxi.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/5HbrX67.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/K5xgqH2.png "A webpage featuring a date night planner application")
 
+### Response Page: 
+![dateNightAppScreenshot](https://i.imgur.com/RBTsiun.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/pB0GNlS.png "A webpage featuring a date night planner application")
+![dateNightAppScreenshot](https://i.imgur.com/iobh4jT.png "A webpage featuring a date night planner application")
 
 ## Credits
-Thank you to the members of group#2 for making this project a joy to work on!
+ Thank you to the members of group#2 for making this project a joy to work on!
+---
+:school: 
+University of Toronto Continuing Educationg
+Full Stack Flex Program - Initial HTML and CSS
+:school:
+
+:heart: 
+Students and Instructors At the UFT-FSF-2020-2021
+:heart:
+
+:clock12:
+Moment JS
+:clock12:
 
 ### Pictures
 All photos are from photographers at: https://www.pexels.com/
@@ -39,7 +63,16 @@ All photos are from photographers at: https://www.pexels.com/
 
 ### Tutorials/References Referred to
 * Materialize
-  *  Parallaxes https://www.youtube.com/watch?v=yHAxSHEuRRI&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=19
+  > Parallaxes https://www.youtube.com/watch?v=yHAxSHEuRRI&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff&index=19
+* Firebase
+  > Javascript Login and Authentication https://www.youtube.com/watch?v=CvkCjfHts9A
+  > Javascript Contact Form https://www.youtube.com/watch?v=PP4Tr0l08NE
+* MapBox Documentation
+  > Geolocation https://docs.mapbox.com/help/tutorials/local-search-geocoding-api/
+* StackOverflow 
+  > Various Questions Related to API fetching https://stackoverflow.com
+* Login Page, Background pattern, from Toptal Subtle Patterns 
+  > https://www.toptal.com/designers/subtlepatterns/congruent-pentagon-outline/
 
 ## License
 Please credit us if you use our code! Thank you!
@@ -177,5 +210,6 @@ enforcement ladder](https://github.com/mozilla/diversity).
 For answers to common questions about this code of conduct, see the FAQ at
 https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
+
 
 
